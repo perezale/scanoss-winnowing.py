@@ -29,7 +29,7 @@ jobs:
         env:
           CIBW_ARCHS_LINUX: x86_64 aarch64
           CIBW_SKIP: pp*
-          CIBW_BEFORE_BUILD_LINUX: curl https://sh.rustup.rs -sSf | sh -s -- -y
+          CIBW_BEFORE_BUILD_LINUX: curl https://sh.rustup.rs -sSf | sh -s -- -y && source "$HOME/.cargo/env"
 
       - name: List Packages
         continue-on-error: true
