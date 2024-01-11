@@ -28,7 +28,8 @@ jobs:
         uses: pypa/cibuildwheel@v2.16.2
         env:
           CIBW_ARCHS_LINUX: x86_64 aarch64
-          CIBW_SKIP: pp* cp38-musllinux_x86_64
+          CIBW_SKIP: pp*
+          CIBW_BEFORE_BUILD_LINUX: curl https://sh.rustup.rs -sSf | sh
 
       - name: List Packages
         continue-on-error: true
